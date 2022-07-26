@@ -1,0 +1,55 @@
+{
+    "name": "1000geeks3exs",
+    "version": "1.0.0",
+    "description": "User could buy an ERC-20 token, after tokens are sended to Manager contract, they will locked automatically, after that user can mint custom NFT",
+    "keywords": [
+        "smart-contract",
+        "ERC20",
+        "ERC721",
+        "NFT"
+    ],
+    "author": "Ivan Lieskov",
+    "license": "ISC",
+    "main": "index.js",
+    "scripts": {
+        "test": "npx hardhat test",
+        "deployToken": "npx hardhat run --network rinkeby scripts/token.js",
+        "deployManager": "npx hardhat run --network rinkeby scripts/manager.js",
+        "verifyToken": "npx hardhat verify --network rinkeby --contract contracts/Token.sol:Token 0x18Fc1da0eEE216C13c022fd8303Ab2068a449dFD",
+        "verifyManager": "npx hardhat verify --network rinkeby --contract contracts/Manager.sol:Manager 0x9Af42Cb13A7B6FE6B88a8E01dB8aDd0c9eFC47d7 '0x18Fc1da0eEE216C13c022fd8303Ab2068a449dFD'",
+        "prettier": "prettier --write 'contracts/'",
+        "coverage": "npx hardhat coverage --testfiles test",
+        "docgen": "npx hardhat docgen",
+        "slither": "slither ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ILESKOV/1000Geeks3exs.git"
+    },
+    "keywords": [
+        "NFT",
+        "ERC-20",
+        "smart-contract",
+        "Ethereum"
+    ],
+    "author": "1000Geeks",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ILESKOV/1000Geeks3exs/issues"
+    },
+    "homepage": "https://github.com/ILESKOV/1000Geeks3exs#readme",
+    "devDependencies": {
+        "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+        "hardhat": "^2.10.1",
+        "prettier": "^2.7.1",
+        "prettier-plugin-solidity": "^1.0.0-dev.23"
+    },
+    "dependencies": {
+        "@nomiclabs/hardhat-solhint": "^2.0.1",
+        "@nomiclabs/hardhat-waffle": "^2.0.3",
+        "@openzeppelin/contracts": "^4.7.0",
+        "dotenv": "^16.0.1",
+        "fs": "^0.0.1-security",
+        "solidity-docgen": "^0.6.0-beta.22"
+    }
+}
