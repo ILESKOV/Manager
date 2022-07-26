@@ -21,6 +21,7 @@
 
  
 ## Technologies Used
+- ipfs
 - hh coverage
 - slither
 - docgen
