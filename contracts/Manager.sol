@@ -15,6 +15,7 @@ import "./ERC721.sol";
  * this contract and owner could withdraw tokens
  */
 contract Manager is NFT {
+    uint256 private _erc20Fee = 5000 * 10**18;
     uint256 private _lockedPeriod = 60;
     uint256 private _managerBalance;
     uint256 private _depositors;
@@ -28,7 +29,6 @@ contract Manager is NFT {
 
     mapping(address => tokenMetaData) internal _ownershipRecord;
     mapping(address => uint256) private _depositsLockTime;
-    mapping(address => bool) private _alreadyDeposited;
 
     event NewDepositor(address user, uint256 when);
     event Withdrawal(uint256 indexed amount, uint256 when);
@@ -47,16 +47,15 @@ contract Manager is NFT {
     /**
      * NOTE: This is a function to accept payment in tokens to create a custom NFT
      * User can only deposit once
-     * @dev Required 5000 tokens approval for this contract in order to deposit
+     * @dev Required _erc20Fee amount of tokens approval for this contract in order to deposit
      * Tokens are locked for 1 minute and NewDepositor event emitted
      */
     function deposit() public {
-        require(erc20.allowance(msg.sender, address(this)) >= 5000, "Not enough tokens approved");
-        require(!isDeposited(msg.sender), "You already deposited");
+        require(erc20.allowance(msg.sender, address(this)) >= _erc20Fee, "Not enough tokens approved");
+        require(!(_depositsLockTime[msg.sender] > 0), "You already deposited");
         require(_depositors < 10, "All deposits have been made");
-        _alreadyDeposited[msg.sender] = true;
         _depositors++;
-        bool success = erc20.transferFrom(msg.sender, address(this), 5000);
+        bool success = erc20.transferFrom(msg.sender, address(this), _erc20Fee);
         if (success) {
             _depositsLockTime[msg.sender] = block.timestamp + _lockedPeriod;
             emit NewDepositor(msg.sender, block.timestamp);
@@ -70,10 +69,11 @@ contract Manager is NFT {
      * NFTminted event emitted
      */
     function createNFT(string memory imgURI) public {
-        require(isDeposited(msg.sender), "Deposit required");
+        require(!(_ownershipRecord[msg.sender].id > 0), "You have already minted your NFT");
+        require(_depositsLockTime[msg.sender] > 0, "Deposit required");
         require(block.timestamp >= _depositsLockTime[msg.sender], "Not available yet. Wait...");
         tokenId++;
-        _managerBalance += 5000;
+        _managerBalance += _erc20Fee;
         _safeMint(msg.sender, tokenId);
         _createMetadata(tokenId, imgURI);
         emit NFTminted(msg.sender, tokenId);
@@ -118,7 +118,7 @@ contract Manager is NFT {
      * @dev Return metadata object of token
      */
     function getOwnershipRecord(address user) external view returns (tokenMetaData memory) {
-        require(isDeposited(user), "This user have no any ownerships");
+        require((_depositsLockTime[user] > 0), "This user have no any ownerships");
         return _ownershipRecord[user];
     }
 
@@ -137,9 +137,16 @@ contract Manager is NFT {
     }
 
     /**
-     * @dev Check if user already make a deposit
+     * @dev Getter for required fee of erc-20 tokens in order to deposit
      */
-    function isDeposited(address user) public view returns (bool) {
-        return _alreadyDeposited[user];
+    function getTokenFee() external view returns (uint256) {
+        return _erc20Fee;
+    }
+
+    /**
+     * @dev Getter for amount of all depositors
+     */
+    function getAmountOfDepositors() external view returns (uint256) {
+        return _depositors;
     }
 }
