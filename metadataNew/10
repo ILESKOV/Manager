@@ -1,0 +1,23 @@
+{
+    "name": "Token #10",
+    "description": "This is extremelly rare NFT #10",
+    "attributes": [
+        {
+            "trait_type": "body_color",
+            "value": "green"
+        },
+        {
+            "trait_type": "Id",
+            "value": "10"
+        },
+        {
+            "trait_type": "Rare",
+            "value": "10%"
+        },
+        {
+            "trait_type": "Date",
+            "value": "2022-07-27 14:24:36"
+        }
+    ],
+    "image": "ipfs://bafybeid2iuyhqr4uxrtkyqw3x4n7ynhuteasbe4doywijmtb4qmk7bxsmm/10.png"
+}
