@@ -26,7 +26,7 @@ contract Token is ERC20, Ownable {
      */
     function buyToken() public payable {
         require(msg.value >= 0.0001 ether, "1 token cost 0.0001 ETH");
-        _mint(msg.sender, (msg.value / 0.0001 ether) * 10**18);
+        _mint(msg.sender, ((msg.value * 10**18) / 0.0001 ether));
     }
 
     /**
