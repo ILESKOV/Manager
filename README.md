@@ -70,7 +70,9 @@ insert current token contract address into your environment variables
  $ npm run verifyManager
  `
 
-
+### NOTE
+In order to quick update of Metadata on opensea page just click "Refresh Metadata button"
+![Example screenshot](./Screenshot8.png)
 
 
 ## Contact
