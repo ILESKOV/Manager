@@ -10,6 +10,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  * and withdraw of tokens
  */
 contract Token is ERC20, Ownable {
+    event WithdrawalOfOwner(address owner, uint256 indexed amount);
+
     /**
      * NOTE: Each token has 18 decimals
      * @dev Mint initial 75000 amount of tokens for the owner
@@ -33,5 +35,6 @@ contract Token is ERC20, Ownable {
     function withdrawETH(uint256 amount) external onlyOwner {
         require(amount <= address(this).balance, "Not enough ETH");
         payable(owner()).transfer(amount);
+        emit WithdrawalOfOwner(msg.sender, amount);
     }
 }
