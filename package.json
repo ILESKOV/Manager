@@ -20,7 +20,8 @@
         "prettier": "prettier --write 'contracts/'",
         "coverage": "npx hardhat coverage --testfiles test",
         "docgen": "npx hardhat docgen",
-        "slither": "slither ."
+        "slither": "slither .",
+        "solhint": "solhint 'contracts/**/*.sol'",
     },
     "repository": {
         "type": "git",
