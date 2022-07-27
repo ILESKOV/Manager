@@ -1,0 +1,23 @@
+{
+    "name": "Token #3",
+    "description": "This is the most common NFT #3",
+    "attributes": [
+        {
+            "trait_type": "body_color",
+            "value": "violet"
+        },
+        {
+            "trait_type": "Id",
+            "value": "3"
+        },
+        {
+            "trait_type": "Rare",
+            "value": "40%"
+        },
+        {
+            "trait_type": "Date",
+            "value": "2022-07-27 14:19:04"
+        }
+    ],
+    "image": "ipfs://bafybeid2iuyhqr4uxrtkyqw3x4n7ynhuteasbe4doywijmtb4qmk7bxsmm/3.png"
+}
