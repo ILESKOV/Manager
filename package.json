@@ -15,13 +15,13 @@
         "test": "npx hardhat test",
         "deployToken": "npx hardhat run --network rinkeby scripts/token.js",
         "deployManager": "npx hardhat run --network rinkeby scripts/manager.js",
-        "verifyToken": "npx hardhat verify --network rinkeby --contract contracts/Token.sol:Token [Token.sol address]",
-        "verifyManager": "npx hardhat verify --network rinkeby --contract contracts/Manager.sol:Manager [Manager.sol address] '[Token.sol address]'",
+        "verifyToken": "npx hardhat verify --network rinkeby --contract contracts/Token.sol:Token 0x74B0FD30FceE546852D9555927BA5bFaCe418705",
+        "verifyManager": "npx hardhat verify --network rinkeby --contract contracts/Manager.sol:Manager 0x381329B7221B15AFf8a2ad9B8aa2b73Fd6a563F9 '0x74B0FD30FceE546852D9555927BA5bFaCe418705'",
         "prettier": "prettier --write 'contracts/'",
         "coverage": "npx hardhat coverage --testfiles test",
         "docgen": "npx hardhat docgen",
         "slither": "slither .",
-        "solhint": "solhint 'contracts/**/*.sol'",
+        "solhint": "solhint 'contracts/**/*.sol"
     },
     "repository": {
         "type": "git",
