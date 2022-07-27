@@ -30,4 +30,9 @@ describe("withdrawETH tests", function () {
         await Token.withdrawETH(BigNumber.from("1000000000000000000"))
         expect(await ethers.provider.getBalance(Token.address)).to.equal("700000000000000000")
     })
+    it("should emit an WithdrawalOfOwner event", async () => {
+        await expect(Token.withdrawETH(BigNumber.from("1000000000000000000")))
+            .to.emit(Token, "WithdrawalOfOwner")
+            .withArgs(owner.address, BigNumber.from("1000000000000000000"))
+    })
 })
