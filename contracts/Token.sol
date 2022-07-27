@@ -11,10 +11,11 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  */
 contract Token is ERC20, Ownable {
     /**
+     * NOTE: Each token has 18 decimals
      * @dev Mint initial 75000 amount of tokens for the owner
      */
     constructor() ERC20("Token", "TKN") {
-        _mint(msg.sender, 75000);
+        _mint(msg.sender, 75000 * 10**18);
     }
 
     /**
@@ -23,7 +24,7 @@ contract Token is ERC20, Ownable {
      */
     function buyToken() public payable {
         require(msg.value >= 0.0001 ether, "1 token cost 0.0001 ETH");
-        _mint(msg.sender, msg.value / 0.0001 ether);
+        _mint(msg.sender, (msg.value / 0.0001 ether) * 10**18);
     }
 
     /**
