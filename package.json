@@ -21,7 +21,7 @@
         "coverage": "npx hardhat coverage --testfiles test",
         "docgen": "npx hardhat docgen",
         "slither": "slither .",
-        "solhint": "solhint 'contracts/**/*.sol"
+        "solhint": "solhint 'contracts/**/*.sol'"
     },
     "repository": {
         "type": "git",
