@@ -35,7 +35,6 @@ contract NFT is Ownable, ERC721("NFT", "NFT") {
      * @param newBaseUri new metadata json format URI
      */
     function updateBaseURI(string memory newBaseUri) external onlyOwner {
-        require(_exists(10), "Wait to all tokens to be minted");
         require(!uriAlreadyUpdated, "Base URI was already updated");
         _baseURI_ = newBaseUri;
         uriAlreadyUpdated = true;
