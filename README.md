@@ -71,7 +71,7 @@ insert current token contract address into your environment variables
  `
 
 ### NOTE
-In order to quick update of Metadata on opensea page just click "Refresh Metadata button"
+In order to quick update of Metadata on opensea page just click "Refresh Metadata" button
 
 
 ![Example screenshot](./Screenshot8.png)
