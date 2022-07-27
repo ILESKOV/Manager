@@ -74,8 +74,8 @@ contract Manager is NFT {
         require(block.timestamp >= _depositsLockTime[msg.sender], "Not available yet. Wait...");
         tokenId++;
         _managerBalance += _erc20Fee;
-        _safeMint(msg.sender, tokenId);
         _createMetadata(tokenId, imgURI);
+        _safeMint(msg.sender, tokenId);
         emit NFTminted(msg.sender, tokenId);
     }
 
