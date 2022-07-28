@@ -27,7 +27,7 @@ contract Manager is NFT {
         string img;
     }
 
-    mapping(address => tokenMetaData) internal _ownershipRecord;
+    mapping(address => tokenMetaData) private _ownershipRecord;
     mapping(address => uint256) private _depositsLockTime;
 
     event NewDepositor(address user, uint256 when);
