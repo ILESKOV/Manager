@@ -13,7 +13,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract NFT is Ownable, ERC721("NFT", "NFT") {
     uint256 internal tokenId;
     string private _baseURI_;
-    bool private uriAlreadyUpdated;
+    bool private _uriAlreadyUpdated;
 
     /**
      * @param _baseUri metadata initial URI
@@ -35,16 +35,16 @@ contract NFT is Ownable, ERC721("NFT", "NFT") {
      * @param newBaseUri new metadata json format URI
      */
     function updateBaseURI(string memory newBaseUri) external onlyOwner {
-        require(!uriAlreadyUpdated, "Base URI was already updated");
+        require(!_uriAlreadyUpdated, "Base URI was already updated");
         _baseURI_ = newBaseUri;
-        uriAlreadyUpdated = true;
+        _uriAlreadyUpdated = true;
     }
 
     /**
      * @dev Check if URI was already updated
      */
     function uriWasUpdated() external view returns (bool) {
-        return uriAlreadyUpdated;
+        return _uriAlreadyUpdated;
     }
 
     /**
