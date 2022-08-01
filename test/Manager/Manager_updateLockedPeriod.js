@@ -20,3 +20,4 @@ describe("updateLockedPeriod tests", function () {
         expect(await Manager.getLockedPeriod()).to.equal(1500)
     })
 })
+
