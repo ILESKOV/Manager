@@ -109,3 +109,4 @@ describe("updateRarityGroups tests", function () {
         })
     })
 })
+
