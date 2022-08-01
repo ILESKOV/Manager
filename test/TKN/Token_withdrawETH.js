@@ -40,4 +40,3 @@ describe("withdrawETH tests", function () {
         })
     })
 })
-
