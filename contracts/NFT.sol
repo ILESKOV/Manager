@@ -54,3 +54,4 @@ contract NFT is Ownable, ERC721("Non-fungible", "NFT") {
         return tokenId;
     }
 }
+
