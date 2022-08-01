@@ -52,3 +52,4 @@ describe("test of not allowing more than 10 depositors", function () {
         await expect(Manager.connect(user11).deposit()).to.be.revertedWith("All deposits have been made")
     })
 })
+
