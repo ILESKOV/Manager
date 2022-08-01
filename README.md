@@ -66,9 +66,6 @@ $ npm run deployMainnet
 !!!Important!!! 
 insert current token contract address into your environment variables
 
-`
- $ npm run deployManager
- `
 ### 6. Insert current contract addresses into package.json
 ![Example screenshot](./helpers/Screenshot7.png)
 
