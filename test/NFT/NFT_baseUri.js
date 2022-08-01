@@ -27,3 +27,4 @@ describe("tokenUri return correct URI", function () {
         )
     })
 })
+
