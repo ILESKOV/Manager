@@ -27,3 +27,4 @@ describe("updateTokenFee tests", function () {
         })
     })
 })
+
