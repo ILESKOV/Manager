@@ -47,12 +47,22 @@ $ npm install
 ### 3. .env environment variables required to set up
 
 ### 4. Run Tests
-`$ npm run test`
+```
+$ npm run test
+```
 
-`$ npm run coverage`
+```
+$ npm run coverage
+```
 
-### 5. Deploy to Rinkeby
-`$ npm run deployToken ` 
+### 5. Deploy to Rinkeby or Mainnet
+```
+$ npm run deployRinkeby
+``` 
+```
+$ npm run deployMainnet 
+``` 
+
 !!!Important!!! 
 insert current token contract address into your environment variables
 
@@ -60,21 +70,30 @@ insert current token contract address into your environment variables
  $ npm run deployManager
  `
 ### 6. Insert current contract addresses into package.json
-![Example screenshot](./Screenshot7.png)
+![Example screenshot](./helpers/Screenshot7.png)
 
 ### 7. Verify contracts
-`$ npm run verifyToken `
+```
+$ npm run verifyRinkebyTKN 
+```
 
+```
+ $ npm run verifyRinkebyManager
+```
+or for mainnet
+```
+$ npm run verifyTKN
+```
 
- `
+```
  $ npm run verifyManager
- `
+```
 
 ### NOTE
 In order to quick update of Metadata on opensea page just click "Refresh Metadata" button
 
 
-![Example screenshot](./Screenshot8.png)
+![Example screenshot](./helpers/Screenshot8.png)
 
 
 ## Contact
