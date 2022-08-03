@@ -10,6 +10,11 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  * and withdraw of tokens
  */
 contract TKN is ERC20, Ownable {
+    /**
+     * @dev Emitted when the owner withdraw ether from the contract
+     * @param owner owner address
+     * @param amount amount of ether
+     */
     event WithdrawalOfOwner(address owner, uint256 indexed amount);
 
     /**
