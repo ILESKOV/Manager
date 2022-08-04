@@ -1,4 +1,4 @@
-# 🤵 Manager NFT generator
+# 🤵 Manager NFT generator 🤵
 > There are 3 contracts: Manager.sol for managing, Token.sol with erc-20 implementation and ERC721.sol with ERC721 standard implementation
 
 ## 📁 Table of Contents
@@ -45,6 +45,12 @@ $ cd repository_file
 $ npm install
 ```
 ### 3. 🔍 .env environment variables required to set up
+Create .env file inside project folder
+- You can get your ethereum or testnet API key [here](https://infura.io/dashboard/ethereum),[here](https://www.alchemy.com) or any other service that allow you to connect to the nodes
+- You can get your private key from your wallet (Don't share your private key with untrusted parties) 
+- You can get your etherscan API -key [here](https://etherscan.io/myapikey).
+- TOKEN_ADDRESS(address of TKN) be available after deploying contracts
+![Example screenshot](./helpers/Screenshot9.png)
 
 ### 4. ⚠️ Run Tests
 ```
