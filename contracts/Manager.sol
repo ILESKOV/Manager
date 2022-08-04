@@ -52,7 +52,7 @@ contract Manager is NFT {
      * @param owner NFTs owner address
      * @param id token Id
      */
-    event NFTminted(address indexed owner, uint256 id);
+    event NFTminted(address owner, uint256 id);
 
     /**
      * @dev Emitted when new erc20 fee setted for deposits
