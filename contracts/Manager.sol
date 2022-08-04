@@ -45,7 +45,7 @@ contract Manager is NFT {
      * @param amount 'TKN' withdrawal amount
      * @param when block.timestamp of transaction
      */
-    event Withdrawal(uint256 indexed amount, uint256 when);
+    event Withdrawal(uint256 amount, uint256 when);
 
     /**
      * @dev Emitted when new NFT minted
