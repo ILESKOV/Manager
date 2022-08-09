@@ -2,12 +2,12 @@
 > There are 3 contracts: Manager.sol for managing, Token.sol with erc-20 implementation and ERC721.sol with ERC721 standard implementation
 
 ## 📁 Table of Contents
-* [General Info](#general-information)
-* [Technologies Used](#technologies-used)
-* [Features](#features)
-* [Requirements For Initial Setup](#requirements)
-* [Setup](#setup)
-* [Contact](#contact)
+* [General Info](#-general-information)
+* [Technologies Used](#-technologies-used)
+* [Features](#-features)
+* [Requirements For Initial Setup](#-requirements-for-initial-setup)
+* [Setup](#-setup)
+* [Contact](#-contact)
 
 
 
