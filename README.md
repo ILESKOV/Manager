@@ -59,10 +59,12 @@ TOKEN_ADDRESS = <Address of deployed TKN.sol contract>
 TKN_FEE = <Constructor parameter fee in TKN tokens in order to create custom NFT>
 LOCKED_PERIOD = <Constructor parameter period in seconds indicating how long deposited TKN tokens will be locked>
 DEPOSITORS_LIMIT = <Constructor parameter limit of depositors for the contract>
+
 // All tokens are divided into 4 groups, each has its own percentage level of rarity
 // For example: first group = 4, second = 3, third = 2 and fourth = 1.
 // 4 means 40%, 3 means 30% and so on
 // FIRST_GROUP_ELEMENTS + SECOND_GROUP_ELEMENTS + THIRD_GROUP_ELEMENTS + FOURTH_GROUP_ELEMENTS always must be 10
+
 FIRST_GROUP_ELEMENTS = 4
 SECOND_GROUP_ELEMENTS = 3
 THIRD_GROUP_ELEMENTS = 2
