@@ -50,6 +50,25 @@ Create .env file inside project folder
 - You can get your private key from your wallet (Don't share your private key with untrusted parties) 
 - You can get your etherscan API -key [here](https://etherscan.io/myapikey).
 - TOKEN_ADDRESS(address of TKN) be available after deploying contracts
+```
+RINKEBY_API = <Rinkeby API key>
+MAINNET_API = <Ethereum mainnet API key>
+PRIVATE_KEY = <Private key of your wallet u want to deploy contracts from>
+ETHERSCAN_KEY = <Etherscan API key in order to verify your contracts>
+TOKEN_ADDRESS = <Address of deployed TKN.sol contract>
+TKN_FEE = <Constructor parameter fee in TKN tokens in order to create custom NFT>
+LOCKED_PERIOD = <Constructor parameter period in seconds indicating how long deposited TKN tokens will be locked>
+DEPOSITORS_LIMIT = <Constructor parameter limit of depositors for the contract>
+// All tokens are divided into 4 groups, each has its own percentage level of rarity
+// For example: first group = 4, second = 3, third = 2 and fourth = 1.
+// 4 means 40%, 3 means 30% and so on
+// FIRST_GROUP_ELEMENTS + SECOND_GROUP_ELEMENTS + THIRD_GROUP_ELEMENTS + FOURTH_GROUP_ELEMENTS always must be 10
+FIRST_GROUP_ELEMENTS = 4
+SECOND_GROUP_ELEMENTS = 3
+THIRD_GROUP_ELEMENTS = 2
+FOURTH_GROUP_ELEMENTS = 1
+```
+
 ![Example screenshot](./helpers/Screenshot9.png)
 
 ### 4. ⚠️ Run Tests
