@@ -28,8 +28,11 @@ contract Manager is NFT {
     uint256 private _depositorsLimit;
     IERC20 private _erc20;
 
+    // Mapping from owner address to tokenMetadata.
     mapping(address => tokenMetaData) private _ownershipRecord;
+    // Mapping from depositor address to tokens unlock time.
     mapping(address => uint256) private _depositsLockTime;
+    // Mapping from group number to amount of tokens.   
     mapping(uint256 => uint256) private _groups;
 
     /**
